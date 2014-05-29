@@ -31,55 +31,148 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="sharepoint" class="anchor" href="#sharepoint"><span class="octicon octicon-link"></span></a>Sharepoint</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Sharepoint is a Rails application that aims to be a simple interface for managing and
+sharing files in a web browser. It lets users create folders and upload, download
+and share files. Admins can manage users, groups and permissions.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<p>Website:
+<a href="http://purezen.github.io/sharepoint">http://purezen.github.io/sharepoint</a></p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Bug reports and feature requests:
+<a href="https://github.com/purezen/sharepoint/issues/new">https://github.com/purezen/sharepoint/issues/new</a></p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>The requirements for running Boxroom are:</p>
 
-<pre><code>Code
-Issues 5
-Pull Requests 0
-Wiki
+<ul>
+<li>Ruby 2.1.1, 2.1.0, 2.0.0 or 1.9.3</li>
+<li>Rails 4.1.1</li>
+<li>A database (e.g. MySQL or SQLite)</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-Pulse
-Graphs
-Network
-</code></pre>
+<p>Follow these steps:</p>
 
-<p>SSH clone URL</p>
+<ol>
+<li>Extract, checkout or clone Boxroom into a new folder</li>
+<li>
+<code>cd</code> into the new folder</li>
+<li>Install necessary gems: <code>$ bundle install</code>
+</li>
+<li>Run the install script: <code>$ bundle exec rake install</code>
+</li>
+<li>Start the server: <code>$ bundle exec rails server</code>
+</li>
+<li>Point your browser to http://localhost:3000/</li>
+<li>Enjoy!</li>
+</ol><h2>
+<a name="upgrading-to-rails-4" class="anchor" href="#upgrading-to-rails-4"><span class="octicon octicon-link"></span></a>Upgrading to Rails 4</h2>
 
-<p>You can clone with HTTPS, SSH, or Subversion.</p>
+<p>Follow these steps:</p>
 
-<p>Boxroom is a Rails application that aims to be a simple interface for managing and sharing files in a web browser. It lets users create folders and upload, download and share files. Admins can manage users, groups and permissions.</p>
+<ol>
+<li>Make a backup of your current <code>boxroom</code> folder (e.g. by renaming it to <code>boxroom.bak</code>)</li>
+<li>Extract, checkout or clone the Rails 4 version of Boxroom into a new folder</li>
+<li>Copy the <code>uploads</code> folder from your backed up version to the new version</li>
+<li>Copy <code>config/database.yml</code> from back up to the new version</li>
+<li>When using SQLite: copy <code>db/development.sqlite3</code> and/or <code>db/production.sqlite3</code> from back up to the new version</li>
+<li>Install necessary gems: <code>$ bundle install</code>
+</li>
+<li>Run the install script: <code>$ bundle exec rake install</code>
+</li>
+</ol><p>If you run into difficulties, please get in touch via the <a href="https://github.com/purezen/sharepoint/issues/new">issue tracker</a>.</p>
 
-<p><a href="http://purezen.github.io/sharepoint">http://purezen.github.io/sharepoint</a></p>
+<h2>
+<a name="mail-settings" class="anchor" href="#mail-settings"><span class="octicon octicon-link"></span></a>Mail settings</h2>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<p>Boxroom sends email on the following occasions:</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<ul>
+<li>When inviting new users</li>
+<li>On a reset password request</li>
+<li>When a file is shared</li>
+</ul><p>For the application to be able to send email, a few things have to be set up. Depending on the environment
+you're working in, either open <code>config/environments/development.rb</code> or <code>config/environments/production.rb</code>.
+Uncomment the following lines and fill in the correct settings of your mail server:</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<div class="highlight highlight-ruby"><pre><span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">delivery_method</span> <span class="o">=</span> <span class="ss">:smtp</span>
+<span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">smtp_settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:address</span> <span class="o">=&gt;</span> <span class="s1">'mailhost'</span><span class="p">,</span>
+  <span class="ss">:port</span> <span class="o">=&gt;</span> <span class="mi">587</span><span class="p">,</span>
+  <span class="ss">:user_name</span> <span class="o">=&gt;</span> <span class="s1">'user_name'</span><span class="p">,</span>
+  <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s1">'password'</span><span class="p">,</span>
+  <span class="ss">:authentication</span> <span class="o">=&gt;</span> <span class="s1">'plain'</span>
+<span class="p">}</span>
+</pre></div>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Also uncomment the following and replace <code>localhost:3000</code> with the host name the app will be running under:</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<div class="highlight highlight-ruby"><pre><span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">default_url_options</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:host</span> <span class="o">=&gt;</span> <span class="s1">'localhost:3000'</span> <span class="p">}</span>
+</pre></div>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>Lastly, you have to choose the address emails will be sent from. You can do
+this by uncommenting and adjusting the following:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="no">ActionMailer</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">default</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s1">'Sharepoint &lt;yourname@yourdomain.com&gt;'</span>
+</pre></div>
+
+<h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Contributors:</p>
+
+<ul>
+<li><a href="https://github.com/marcontwm">Jessica Marcon</a></li>
+<li><a href="https://github.com/milgner">Marcus Ilgner</a></li>
+<li><a href="https://github.com/rhalff">Rob Halff</a></li>
+<li><a href="https://github.com/kerinin/boxroom">Ryan Michael</a></li>
+<li><a href="https://github.com/tvw/">Thomas Volkmar Worm</a></li>
+<li><a href="https://github.com/jmcarbo">Joan Marc Carbo</a></li>
+<li>Stian Haklev</li>
+<li>Craig Box</li>
+<li><a href="https://github.com/rheoli">Stephan Toggweiler</a></li>
+<li><a href="https://github.com/kaleworsley">Kale Worsley</a></li>
+<li><a href="https://github.com/demental">Arnaud Sellenet</a></li>
+<li><a href="https://github.com/patfrat">Patrick Fratczak</a></li>
+<li><a href="https://github.com/alepore">Alessandro Lepore</a></li>
+<li><a href="https://github.com/Yardboy">Cayce Balara</a></li>
+</ul><p>Donations:</p>
+
+<ul>
+<li><a href="http://www.itpartners.co.nz/">IT Partners</a></li>
+<li>Matt Meshulam</li>
+<li>April Colo</li>
+<li><a href="http://www.zulrafique.com.my/">Mohd Sofian</a></li>
+</ul><p>Icons:</p>
+
+<ul>
+<li><a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a></li>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2014 JIIT Students</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so, subject
+to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
       </section>
     </div>
 
