@@ -1,18 +1,14 @@
-# Boxroom
+# Sharepoint
 
-[![Build Status](https://api.travis-ci.org/mischa78/boxroom.png)](http://travis-ci.org/mischa78/boxroom)
-[![Dependency Status](https://gemnasium.com/mischa78/boxroom.png?travis)](https://gemnasium.com/mischa78/boxroom)
-[![Code Climate](https://codeclimate.com/github/mischa78/boxroom.png)](https://codeclimate.com/github/mischa78/boxroom)
-
-Boxroom is a Rails application that aims to be a simple interface for managing and
+Sharepoint is a Rails application that aims to be a simple interface for managing and
 sharing files in a web browser. It lets users create folders and upload, download
 and share files. Admins can manage users, groups and permissions.
 
 Website:
-http://boxroomapp.com/
+http://purezen.github.io/sharepoint
 
 Bug reports and feature requests:
-https://github.com/mischa78/boxroom/issues/new
+https://github.com/purezen/sharepoint/issues/new
 
 
 Requirements
@@ -49,7 +45,7 @@ Follow these steps:
  6. Install necessary gems: `$ bundle install`
  7. Run the install script: `$ bundle exec rake install`
 
-If you run into difficulties, please get in touch via the [issue tracker](https://github.com/mischa78/boxroom/issues/new).
+If you run into difficulties, please get in touch via the [issue tracker](https://github.com/purezen/sharepoint/issues/new).
 
 
 Mail settings
@@ -85,52 +81,8 @@ Lastly, you have to choose the address emails will be sent from. You can do
 this by uncommenting and adjusting the following:
 
 ```ruby
-ActionMailer::Base.default :from => 'Boxroom <yourname@yourdomain.com>'
+ActionMailer::Base.default :from => 'Sharepoint <yourname@yourdomain.com>'
 ```
-
-
-Languages
----------
-Thanks to [Rob Halff](https://github.com/rhalff), [Marcus Ilgner](https://github.com/milgner),
-[Jessica Marcon](https://github.com/marcontwm) and [Arnaud Sellenet](https://github.com/demental)
-Boxroom is now available in Dutch, German, Italian and French.
-
-English is the default. To change the language, open `config/application.rb` and set the language you desire:
-
-```ruby
-config.i18n.default_locale = :en # English
-config.i18n.default_locale = :nl # Dutch
-config.i18n.default_locale = :de # German
-config.i18n.default_locale = :it # Italian
-config.i18n.default_locale = :fr # French
-```
-
-It would be great to have many more languages. I am waiting for your pull requests.
-
-
-JavaScript runtime
-------------------
-
-You need to have a JavaScript runtime installed to run Boxroom. Your system may already have a
-runtime installed, but if not you'll get an error message about a missing JavaScript runtime when
-running the install script. In that case uncomment the following line in the `Gemfile`:
-
-    # gem 'therubyracer', platforms: :ruby
-
-and try running `$ bundle install` and `$ bundle exec rake install` again.
-
-
-Roadmap
--------
-
-These are the features I am planning to implement at some point:
-
- * Functional tests
- * Thumbnail view
- * Full text search
- * Extract uploaded zip files
- * Batch create new users for admins
-
 
 Credits
 -------
@@ -166,7 +118,7 @@ Icons:
 
 License
 -------
-Copyright (c) 2006-2014 Mischa Berger
+Copyright (c) 2014 JIIT Students
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
