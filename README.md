@@ -87,29 +87,11 @@ ActionMailer::Base.default :from => 'Sharepoint <yourname@yourdomain.com>'
 Credits
 -------
 
-Contributors:
+Members:
 
- * [Jessica Marcon](https://github.com/marcontwm)
- * [Marcus Ilgner](https://github.com/milgner)
- * [Rob Halff](https://github.com/rhalff)
- * [Ryan Michael](https://github.com/kerinin/boxroom)
- * [Thomas Volkmar Worm](https://github.com/tvw/)
- * [Joan Marc Carbo](https://github.com/jmcarbo)
- * Stian Haklev
- * Craig Box
- * [Stephan Toggweiler](https://github.com/rheoli)
- * [Kale Worsley](https://github.com/kaleworsley)
- * [Arnaud Sellenet](https://github.com/demental)
- * [Patrick Fratczak](https://github.com/patfrat)
- * [Alessandro Lepore](https://github.com/alepore)
- * [Cayce Balara](https://github.com/Yardboy)
-
-Donations:
-
- * [IT Partners](http://www.itpartners.co.nz/)
- * Matt Meshulam
- * April Colo
- * [Mohd Sofian](http://www.zulrafique.com.my/)
+ * [Aditya Bhardwaj](aditya2204@gmail.com)
+ * [Ishaana Rai](ishaana193@gmail.com)
+ * [Shashank Salwan](shashanksalwan@gmail.com)
 
 Icons:
 
