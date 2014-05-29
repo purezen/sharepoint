@@ -90,7 +90,9 @@ Credits
 Members:
 
 Aditya Bhardwaj - aditya2204@gmail.com
+
 Ishaana Rai - ishaana193@gmail.com
+
 Shashank Salwan - shashanksalwan@gmail.com
 
 Icons:
